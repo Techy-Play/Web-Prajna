@@ -24,39 +24,42 @@
             </div>
         </div>
 
-        <!-- Initial Greeting -->
-        <div id="header" class="greeting-section">
-            <h4 id="initial-message">
-                Hey! How are you doing today? I am Prajna. What would be your name?
-            </h4>
-        </div>
-
-        <!-- Name Input Section -->
-        <div id="name-input-section" class="input-section">
-            <input type="text" id="name-input" placeholder="Enter your name..." autofocus>
-            <button onclick="submitName()" class="send-btn">
-                <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-
-        <!-- Dynamic Content Section (Initially Hidden) -->
-        <div id="dynamic-content" style="display: none;">
-            <p id="dynamic-message"></p>
-        </div>
-
-        <!-- Chat Container (Initially Hidden) -->
-        <div id="chat-container" style="display: none; flex: 1; flex-direction: column;">
-            <div id="chat-display" class="chat-messages"></div>
-            <div class="typing-indicator" id="typing-indicator" style="display: none;">
-                <span></span>
-                <span></span>
-                <span></span>
+        <!-- Main Chat Area Container -->
+        <div class="chat-main-container">
+            <!-- Initial Greeting -->
+            <div id="header" class="greeting-section">
+                <h4 id="initial-message">
+                    Hey! How are you doing today? I am Prajna. What would be your name?
+                </h4>
             </div>
-            <div class="message-input-container">
-                <input type="text" id="user-input" placeholder="Type your message..." class="message-input">
-                <button onclick="sendMessage()" class="send-btn">
-                    <i class="fas fa-paper-plane"></i>
+
+            <!-- Name Input Section -->
+            <div id="name-input-section" class="input-section">
+                <input type="text" id="name-input" placeholder="Enter your name..." autofocus>
+                <button onclick="submitName()" class="send-btn">
+                    <i class="fas fa-arrow-right"></i>
                 </button>
+            </div>
+
+            <!-- Dynamic Content Section (Initially Hidden) -->
+            <div id="dynamic-content" style="display: none;">
+                <p id="dynamic-message"></p>
+            </div>
+
+            <!-- Chat Container (Initially Hidden) -->
+            <div id="chat-container" style="display: none; flex: 1; overflow-y: auto;">
+                <div id="chat-display" class="chat-messages"></div>
+                <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="message-input-container">
+                    <input type="text" id="user-input" placeholder="Type your message..." class="message-input">
+                    <button onclick="sendMessage()" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

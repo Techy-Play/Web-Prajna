@@ -3,44 +3,64 @@ let userName = "";
 
 // Function to submit user's name
 function submitName() {
-    const nameInput = document.getElementById('name-input');
-    userName = nameInput.value.trim();
+    const nameInput = document.getElementById("name-input");
+    const name = nameInput.value.trim();
     
-    if (userName) {
+    if (name) {
         // Hide name input section
-        document.getElementById('name-input-section').style.display = 'none';
-        document.getElementById('header').style.display = 'none';
+        document.getElementById("name-input-section").style.display = "none";
+        document.getElementById("header").style.display = "none";
         
-        // Show typing indicator briefly
-        const typingIndicator = document.getElementById('typing-indicator');
-        document.getElementById('chat-container').style.display = 'flex';
-        typingIndicator.style.display = 'flex';
+        // Show chat container
+        document.getElementById("chat-container").style.display = "flex";
         
-        // After a short delay, show welcome message
-        setTimeout(() => {
-            typingIndicator.style.display = 'none';
-            addBotMessage(`Hi ${userName}! It's nice to meet you. How can I help you today?`);
-        }, 1500);
+        // Add welcome message
+        addMessageToChat(`Hello ${name}! How can I help you today?`, 'bot');
+        
+        // Focus on message input
+        document.getElementById("user-input").focus();
     }
 }
 
 // Function to send user message
 function sendMessage() {
-    const userInput = document.getElementById('user-input');
+    const userInput = document.getElementById("user-input");
     const message = userInput.value.trim();
     
     if (message) {
-        // Add user message to chat
-        addUserMessage(message);
-        userInput.value = '';
+        // Create user message element
+        addMessageToChat(message, 'user');
+        
+        // Clear input
+        userInput.value = "";
         
         // Show typing indicator
-        const typingIndicator = document.getElementById('typing-indicator');
-        typingIndicator.style.display = 'flex';
+        document.getElementById("typing-indicator").style.display = "flex";
         
-        // Send message to Rasa server
-        fetchRasaResponse(message);
+        // Simulate bot response after delay
+        setTimeout(() => {
+            document.getElementById("typing-indicator").style.display = "none";
+            
+            // Here you would typically call your API for a real response
+            // For demo, we'll just echo back
+            const botResponse = `I received: "${message}"`;
+            addMessageToChat(botResponse, 'bot');
+        }, 1500);
     }
+}
+
+// Function to add messages to the chat display
+function addMessageToChat(text, sender) {
+    const chatDisplay = document.getElementById("chat-display");
+    const messageDiv = document.createElement("div");
+    
+    messageDiv.className = sender === 'user' ? 'message user-message' : 'message bot-message';
+    messageDiv.textContent = text;
+    
+    chatDisplay.appendChild(messageDiv);
+    
+    // Scroll to bottom
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
 }
 
 // Function to fetch response from Rasa server
