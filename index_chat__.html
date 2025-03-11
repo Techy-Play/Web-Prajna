@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajna Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="chat-wrapper">
+        <!-- Bot Header -->
+        <div class="chat-header">
+            <div class="bot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="bot-info">
+                <h2>Prajna</h2>
+                <div class="bot-status">
+                    <span class="status-indicator online"></span>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Initial Greeting -->
+        <div id="header" class="greeting-section">
+            <h4 id="initial-message">
+                Hey! How are you doing today? I am Prajna. What would be your name?
+            </h4>
+        </div>
+
+        <!-- Name Input Section -->
+        <div id="name-input-section" class="input-section">
+            <input type="text" id="name-input" placeholder="Enter your name..." autofocus>
+            <button onclick="submitName()" class="send-btn">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- Dynamic Content Section (Initially Hidden) -->
+        <div id="dynamic-content" style="display: none;">
+            <p id="dynamic-message"></p>
+        </div>
+
+        <!-- Chat Container (Initially Hidden) -->
+        <div id="chat-container" style="display: none; flex: 1; flex-direction: column;">
+            <div id="chat-display" class="chat-messages"></div>
+            <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="message-input-container">
+                <input type="text" id="user-input" placeholder="Type your message..." class="message-input">
+                <button onclick="sendMessage()" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Add ability to send message with Enter key
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        document.getElementById('name-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                submitName();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Started|Prajna Ai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content-wrapper {
+            flex: 1 0 auto;
+        }
+        footer {
+            flex-shrink: 0;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+        .step-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #6366f1;
+        }
+        .modal-dialog {
+            max-width: 90%;
+            margin: 20px auto;
+        }
+        
+        .modal-body {
+            position: relative;
+            padding: 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 30px 0;
+                margin-bottom: 20px;
+            }
+            .display-4 {
+                font-size: 2rem;
+            }
+            .lead {
+                font-size: 1rem;
+            }
+            .btn-lg {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+            .card-body {
+                padding: 1rem;
+            }
+            .py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            .rounded-circle {
+                padding: 1.5rem !important;
+            }
+        }
+    </style>
+    <!-- ...existing head content... -->
+</head>
+<body>
+    <div class="content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm mb-3">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">Prajna AI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="getstarted.html">Get Started</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold">Get Started with Prajna AI</h1>
+                <p class="lead mb-4">Your journey to AI-powered insights begins here</p>
+                <a href="signup.html" class="btn btn-primary btn-lg px-4 me-2">Create Account</a>
+                <a href="login.html" class="btn btn-outline-secondary btn-lg px-4">Login</a>
+            </div>
+        </section>
+
+        <!-- Getting Started Steps -->
+        <section class="container mb-5">
+            <h2 class="text-center mb-4">Follow These Simple Steps</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow step-card">
+                        <div class="card-body text-center">
+                            <div class="rounded-circle bg-light p-3 d-inline-flex mb-3">
+                                <i class="bi bi-person-plus fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="card-title">1. Create Account</h3>
+                            <p class="card-text">Sign up for a Prajna AI account to access our powerful AI platform.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow step-card">
+                        <div class="card-body text-center">
+                            <div class="rounded-circle bg-light p-3 d-inline-flex mb-3">
+                                <i class="bi bi-gear fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="card-title">2. Configure</h3>
+                            <p class="card-text">Set up your AI models and customize the platform to your needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow step-card">
+                        <div class="card-body text-center">
+                            <div class="rounded-circle bg-light p-3 d-inline-flex mb-3">
+                                <i class="bi bi-rocket-takeoff fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="card-title">3. Launch</h3>
+                            <p class="card-text">Start using Prajna AI to analyze data and generate meaningful insights.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="bg-primary text-white py-5 text-center">
+            <div class="container">
+                <h2>Ready to get started?</h2>
+                <p class="lead mb-4">Join thousands of businesses already using Prajna AI</p>
+                <button class="btn btn-light btn-lg px-4 me-2"><a href="signup.html">Create Free Account</a></button>
+            </div>
+        </section>
+
+        <!-- Tutorial Video Modal -->
+        <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tutorialModalLabel">Prajna AI Tutorial</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Prajna AI</h5>
+                    <p>Transforming businesses through AI-powered insights.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Connect</h5>
+                    <div class="d-flex">
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-3 mt-3">
+                <p class="small text-center mb-0">&copy; 2025 Prajna AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Stop YouTube video when modal is closed
+        const tutorialModal = document.getElementById('tutorialModal')
+        if (tutorialModal) {
+            tutorialModal.addEventListener('hidden.bs.modal', function () {
+                const iframe = tutorialModal.querySelector('iframe');
+                const iframeSrc = iframe.src;
+                iframe.src = '';
+                setTimeout(function(){
+                    iframe.src = iframeSrc;
+                }, 100);
+            });
+        }
+    </script>
+    <!-- ...existing scripts... -->
+</body>
+</html>
